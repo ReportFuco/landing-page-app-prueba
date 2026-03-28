@@ -1,44 +1,55 @@
-﻿import Link from 'next/link';
-import { ArrowRight, PhoneCall } from 'lucide-react';
-import Button from '@/components/Button';
-import Reveal from '@/components/Reveal';
+import Link from 'next/link';
 import Section from '@/components/Section';
+import { CONTACT_INFO } from '@/lib/constants';
 
 export default function CTASection() {
   return (
-    <Section id="contacto" className="py-14 md:py-24">
-      <Reveal>
-        <div className="relative overflow-hidden rounded-3xl border border-primary-500/15 bg-gradient-to-r from-primary-700 via-primary-600 to-accent-700 px-6 py-12 text-center text-white shadow-[0_26px_70px_-36px_rgba(2,132,199,0.8)] md:px-12 md:py-16">
-          <div className="pointer-events-none absolute inset-0">
-            <div className="absolute -top-20 right-0 h-52 w-52 rounded-full bg-white/15 blur-3xl" />
-            <div className="absolute -bottom-24 left-6 h-52 w-52 rounded-full bg-white/10 blur-3xl" />
+    <Section id="contacto" className="bg-white py-14 sm:py-16 md:py-20">
+      <div className="rounded-[32px] border border-neutral-200 bg-white p-6 sm:p-8 md:p-10">
+        <div className="grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:gap-16">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-neutral-500">Contacto</p>
+            <h2 className="mt-4 text-3xl font-semibold text-neutral-950 sm:text-4xl md:text-5xl">
+              Conversemos sobre el desafío que necesitas abordar.
+            </h2>
+            <p className="mt-5 max-w-2xl text-base leading-7 text-neutral-700 sm:text-lg">
+              Si estás buscando apoyo para articular actores, ordenar conversaciones complejas o
+              diseñar una estrategia de colaboración, podemos ayudarte a construir una ruta de trabajo
+              clara y realista.
+            </p>
           </div>
 
-          <div className="relative z-10">
-            <h2 className="text-3xl font-bold md:text-4xl">¿Necesitas colaboración estratégica?</h2>
-            <p className="mx-auto mt-5 max-w-2xl text-base text-blue-50 md:text-lg">
-              Conversemos sobre tu desafío y diseñemos una ruta de trabajo realista, participativa y
-              orientada a resultados.
-            </p>
-
-            <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link href="/contacto">
-                <Button size="lg" className="bg-white text-primary-700 hover:bg-blue-50 hover:text-primary-700">
-                  Enviar mensaje
-                  <ArrowRight size={18} className="ml-2" />
-                </Button>
-              </Link>
-              <a
-                href="tel:+56229739113"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/80 px-6 py-3 font-semibold text-white transition-colors hover:bg-white/10"
-              >
-                <PhoneCall size={18} />
-                Llamar ahora
+          <div className="space-y-4 rounded-[28px] border border-neutral-200 bg-white p-6 sm:p-7">
+            <div>
+              <p className="text-sm font-semibold text-neutral-950">Correo electrónico</p>
+              <a href={`mailto:${CONTACT_INFO.email}`} className="mt-1 block text-base text-neutral-700 hover:text-neutral-950">
+                {CONTACT_INFO.email}
               </a>
+            </div>
+
+            <div>
+              <p className="text-sm font-semibold text-neutral-950">Teléfono</p>
+              <a href={`tel:${CONTACT_INFO.phone.replace(/\s/g, '')}`} className="mt-1 block text-base text-neutral-700 hover:text-neutral-950">
+                {CONTACT_INFO.phone}
+              </a>
+            </div>
+
+            <div>
+              <p className="text-sm font-semibold text-neutral-950">Ubicación</p>
+              <p className="mt-1 text-base text-neutral-700">{CONTACT_INFO.address}</p>
+            </div>
+
+            <div className="pt-3">
+              <Link
+                href="/contacto"
+                className="inline-flex items-center justify-center rounded-full border border-neutral-300 bg-white px-6 py-3 text-sm font-medium text-neutral-950 transition-colors hover:bg-neutral-100"
+              >
+                Ir al formulario de contacto
+              </Link>
             </div>
           </div>
         </div>
-      </Reveal>
+      </div>
     </Section>
   );
 }

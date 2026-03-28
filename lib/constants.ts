@@ -1,106 +1,80 @@
-﻿import { Service, Client, MethodologyPhase } from '@/types';
+import { Client, MethodologyPhase, Service } from '@/types';
 
-// Configuración de colores
 export const COLORS = {
-  primary: '#0284c7',
-  secondary: '#16a34a',
-  accent: '#0369a1',
+  primary: '#0f766e',
+  secondary: '#115e59',
+  accent: '#0f766e',
   neutral: '#475569',
-  light: '#f8fafc',
+  light: '#ffffff',
   dark: '#0f172a',
 };
 
-// Servicios
 export const SERVICES: Service[] = [
   {
-    id: 'relacionamiento',
-    title: 'Relacionamiento Comunitario y Gestión del Entorno',
-    description:
-      'Acompañamos a empresas y organizaciones para sostener relaciones colaborativas y construir una visión común de desarrollo territorial.',
-    icon: 'network',
-    color: 'from-cyan-100 to-sky-100',
-  },
-  {
-    id: 'participacion',
-    title: 'Participación Ciudadana',
-    description:
-      'Diseñamos, gestionamos y evaluamos procesos participativos con metodologías claras, capacidades humanas y comunicación comprensible.',
+    id: 'dialogo',
+    title: 'Diseño y facilitación de diálogo',
+    description: 'Procesos de conversación estratégica para construir acuerdos entre actores diversos.',
     icon: 'users',
-    color: 'from-emerald-100 to-teal-100',
+    color: 'from-neutral-100 to-neutral-50',
   },
   {
-    id: 'colaboracion',
-    title: 'Colaboración Multiactor',
-    description:
-      'Diseñamos e implementamos procesos para desafíos complejos que requieren coordinación entre actores con intereses diversos.',
+    id: 'territorio',
+    title: 'Relacionamiento y gestión territorial',
+    description: 'Estrategias para fortalecer confianza, coordinación y legitimidad en contextos complejos.',
+    icon: 'network',
+    color: 'from-neutral-100 to-neutral-50',
+  },
+  {
+    id: 'implementacion',
+    title: 'Acompañamiento para la implementación',
+    description: 'Priorización, seguimiento y ordenamiento de decisiones para pasar del acuerdo a la acción.',
     icon: 'handshake',
-    color: 'from-blue-100 to-indigo-100',
+    color: 'from-neutral-100 to-neutral-50',
   },
 ];
 
-// Fases de metodología
 export const METHODOLOGY_PHASES: MethodologyPhase[] = [
   {
     phase: 1,
-    title: 'Condiciones para el diálogo',
-    description: 'Establecimiento de bases y comprensión profunda del contexto.',
-    items: [
-      'Objetivos para el diálogo y la colaboración con resultados.',
-      'Mapas de actores, intereses, redes y conflicto.',
-      'Línea base de referencia para medir avances.',
-    ],
+    title: 'Escucha y diagnóstico',
+    description: 'Comprensión del contexto, actores, tensiones y oportunidades.',
+    items: ['Mapeo de actores', 'Levantamiento de información', 'Definición del marco de trabajo'],
   },
   {
     phase: 2,
-    title: 'Diálogo para la colaboración',
-    description: 'Construcción conjunta de soluciones y objetivos compartidos.',
-    items: [
-      'Reglas del juego consensuadas.',
-      'Diagnóstico compartido y comunicación efectiva.',
-      'Visión compartida con criterios de evaluación.',
-      'Definición de objetivos estratégicos.',
-    ],
+    title: 'Diseño y facilitación',
+    description: 'Construcción de espacios y reglas para una conversación productiva.',
+    items: ['Diseño metodológico', 'Facilitación de sesiones', 'Sistematización de acuerdos'],
   },
   {
     phase: 3,
-    title: 'Colaboración para la acción',
-    description: 'Implementación y resultados tangibles para todas las partes.',
-    items: [
-      'Acompañamiento a la implementación.',
-      'Articulación para la acción colectiva efectiva.',
-      'Monitoreo y evaluación de resultados.',
-    ],
+    title: 'Seguimiento e implementación',
+    description: 'Acompañamiento posterior para sostener decisiones y compromisos.',
+    items: ['Priorización', 'Hoja de ruta', 'Monitoreo de avances'],
   },
 ];
 
-// Clientes/Colaboradores
 export const CLIENTS: Client[] = [
-  { id: '1', name: 'Nodo Acti', shortName: 'NA' },
-  { id: '2', name: 'IMI', shortName: 'IMI' },
-  { id: '3', name: 'Barrick', shortName: 'BAR' },
-  { id: '4', name: 'Andes Iron', shortName: 'AI' },
-  { id: '5', name: 'PNUD', shortName: 'PNUD' },
-  { id: '6', name: 'Kinross', shortName: 'KIN' },
-  { id: '7', name: 'BID', shortName: 'BID' },
-  { id: '8', name: 'UNO', shortName: 'UNO' },
-  { id: '9', name: 'Teck', shortName: 'TECK' },
-  { id: '10', name: 'Panamá', shortName: 'PA' },
-  { id: '11', name: 'Corfo', shortName: 'COR' },
-  { id: '12', name: 'CNID', shortName: 'CNID' },
-];
+  { id: '1', name: 'Empresa minera internacional', shortName: 'EMI' },
+  { id: '2', name: 'Fundación territorial', shortName: 'FT' },
+  { id: '3', name: 'Gobierno regional', shortName: 'GR' },
+  { id: '4', name: 'Compañía energética', shortName: 'CE' },
+  { id: '5', name: 'Organismo multilateral', shortName: 'OM' },
+  { id: '6', name: 'Municipalidad asociada', shortName: 'MA' },
+  { id: '7', name: 'Institución pública', shortName: 'IP' },
+  { id: '8', name: 'Consorcio productivo', shortName: 'CP' },
+]
 
-// Información de contacto
 export const CONTACT_INFO = {
   email: 'contacto@colaboracionestrategica.cl',
-  phone: '+56 2 2973 9113',
+  phone: '+56 9 6235 4240',
   linkedin: 'https://www.linkedin.com/company/colaboracion-estrategica/',
   address: 'Santiago, Chile',
 };
 
-// Menú de navegación
 export const NAV_MENU = [
   { label: 'Inicio', href: '#inicio' },
-  { label: 'Servicios', href: '#servicios' },
-  { label: 'Metodología', href: '#metodologia' },
-  { label: 'Contacto', href: '/contacto' },
+  { label: 'Quiénes somos', href: '#quienes-somos' },
+  { label: 'Clientes', href: '#clientes' },
+  { label: 'Contacto', href: '#contacto' },
 ];
