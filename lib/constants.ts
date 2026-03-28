@@ -1,4 +1,4 @@
-import { Client, ImpactProject, MethodologyPhase, ProposalScroll, Service } from '@/types';
+import { Client, ImpactProject, MethodologyPhase, ProposalScroll, Service, ValueProposition } from '@/types';
 
 export const COLORS = {
   primary: '#0f766e',
@@ -124,43 +124,95 @@ export const PROPOSAL_SCROLLS: ProposalScroll[] = [
 
 export const IMPACT_PROJECTS: ImpactProject[] = [
   {
-    id: 'impacto-1',
-    title: 'Proyecto de Impacto 01',
-    summary: 'Descripción breve editable para explicar el objetivo general del proyecto.',
-    category: 'Desarrollo Territorial',
-    status: 'En diseño',
+    id: 'impacto-truchas-sra',
+    title: 'Engorda de Truchas en Sistemas de Recirculación',
+    summary:
+      'Instalación de plantas de engorda de truchas en ciclo cerrado para generar empleo e ingresos en comunidades indígenas, con enfoque ambientalmente sustentable.',
+    category: 'Diversificación Productiva',
+    status: 'Formulado',
     year: '2026',
   },
   {
-    id: 'impacto-2',
-    title: 'Proyecto de Impacto 02',
-    summary: 'Espacio para contar el problema abordado, aliados y alcance del proyecto.',
-    category: 'Articulación Público-Privada',
-    status: 'En ejecución',
+    id: 'impacto-camelidos',
+    title: 'Agregación de Valor a la Carne de Camélidos',
+    summary:
+      'Implementación de sala de proceso para desarrollar productos cárnicos con valor agregado en Putre, con base técnica y comercial validada.',
+    category: 'Agroindustria Indígena',
+    status: 'Formulado (COBIN)',
     year: '2026',
   },
   {
-    id: 'impacto-3',
-    title: 'Proyecto de Impacto 03',
-    summary: 'Bloque editable para detallar acciones clave, metodología y foco de resultados.',
-    category: 'Participación Ciudadana',
-    status: 'En diseño',
+    id: 'impacto-turismo',
+    title: 'Hotelería y Turismo Indígena',
+    summary:
+      'Tres proyectos de turismo con propuesta de valor cultural y de naturaleza, complementados con tour operadores indígenas y servicios a empresas del territorio.',
+    category: 'Turismo de Identidad',
+    status: 'Formulado',
     year: '2026',
   },
   {
-    id: 'impacto-4',
-    title: 'Proyecto de Impacto 04',
-    summary: 'Placeholder para incorporar métricas de proceso, aprendizajes y próximos pasos.',
-    category: 'Sostenibilidad',
-    status: 'En implementación',
+    id: 'impacto-procesados',
+    title: 'Mínimamente Procesados (Papas y Hortalizas)',
+    summary:
+      'Proyecto de selección, limpieza, envasado y transformación de papa para abastecer mercados locales y regionales, incluyendo subproductos.',
+    category: 'Encadenamiento Local',
+    status: 'Formulado',
     year: '2026',
   },
   {
-    id: 'impacto-5',
-    title: 'Proyecto de Impacto 05',
-    summary: 'Sección preparada para narrar el impacto esperado y el valor generado.',
-    category: 'Innovación Social',
-    status: 'Próximamente',
+    id: 'impacto-madera-lena',
+    title: 'Agregación de Valor a Madera y Leña',
+    summary:
+      'Centros de acopio y secado para comercialización de productos forestales, incluyendo pellets y leña certificada, con viabilidad técnica, comercial y ambiental.',
+    category: 'Economía Forestal Comunitaria',
+    status: 'Formulado (incluye COBIN)',
     year: '2026',
+  },
+];
+
+export const VALUE_PROPOSITIONS: ValueProposition[] = [
+  {
+    id: 'relacionamiento-comunitario',
+    title: 'Relacionamiento Comunitario Sostenible',
+    summary:
+      'Diseño de estrategias de diálogo y articulación para construir relaciones de largo plazo entre empresas, actores públicos y comunidades.',
+    highlights: [
+      'Análisis de riesgo social y territorial (IFC)',
+      'Reportes GRI 413 y cumplimiento en territorios indígenas',
+      'Relacionamiento temprano e inversión social de impacto',
+    ],
+  },
+  {
+    id: 'inversion-social',
+    title: 'Inversión Social de Impacto',
+    summary:
+      'Asesoría para aumentar el efecto multiplicador de la inversión privada mediante planificación participativa y financiamiento compartido.',
+    highlights: [
+      'Evaluación de impacto y sistemas de monitoreo territorial',
+      'Negocios inclusivos, redes y valor compartido',
+      'Preinversión y configuración financiera de proyectos',
+    ],
+  },
+  {
+    id: 'servicios-indigenas',
+    title: 'Servicios a Organizaciones y Empresas Indígenas',
+    summary:
+      'Acompañamiento para el desarrollo y escalamiento de negocios indígenas, agregación de valor y formulación de proyectos de triple impacto.',
+    highlights: [
+      'Estrategias de valor agregado para productos y servicios',
+      'Sistemas de segundo piso y certificaciones',
+      'Escalamiento y articulación en cadenas de valor',
+    ],
+  },
+  {
+    id: 'gestion-ambiental',
+    title: 'Gestión Ambiental Territorial',
+    summary:
+      'Monitoreo participativo y seguimiento de compromisos ambientales para fortalecer confianza y reducir conflictividad territorial.',
+    highlights: [
+      'Monitoreo ambiental participativo',
+      'Seguimiento de compromisos RCA',
+      'Transferencia de capacidades a organizaciones indígenas',
+    ],
   },
 ];

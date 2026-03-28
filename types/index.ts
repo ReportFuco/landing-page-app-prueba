@@ -58,3 +58,10 @@ export interface ImpactProject {
   status: string;
   year: string;
 }
+
+export interface ValueProposition {
+  id: string;
+  title: string;
+  summary: string;
+  highlights: string[];
+}

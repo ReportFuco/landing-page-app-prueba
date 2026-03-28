@@ -1,37 +1,37 @@
 'use client';
 
 import Link from 'next/link';
-import { Menu, Moon, Sun, X } from 'lucide-react';
+import { Menu, MoonStar, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { NAV_MENU } from '@/lib/constants';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
-    if (typeof window === 'undefined') {
-      return 'light';
-    }
 
-    const storedTheme = window.localStorage.getItem('theme');
-    const preferredDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    return storedTheme === 'light' || storedTheme === 'dark'
-      ? storedTheme
-      : preferredDark
-        ? 'dark'
-        : 'light';
-  });
-
-  useEffect(() => {
+  function applyTheme(theme: 'light' | 'dark') {
     const root = document.documentElement;
     root.setAttribute('data-theme', theme);
     root.classList.remove('theme-light', 'theme-dark');
     root.classList.add(theme === 'dark' ? 'theme-dark' : 'theme-light');
     window.localStorage.setItem('theme', theme);
-  }, [theme]);
+  }
+
+  useEffect(() => {
+    const storedTheme = window.localStorage.getItem('theme');
+    const preferredDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const initialTheme =
+      storedTheme === 'light' || storedTheme === 'dark'
+        ? storedTheme
+        : preferredDark
+          ? 'dark'
+          : 'light';
+
+    applyTheme(initialTheme);
+  }, []);
 
   function toggleTheme() {
-    const nextTheme = theme === 'dark' ? 'light' : 'dark';
-    setTheme(nextTheme);
+    const currentTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
   }
 
   return (
@@ -64,10 +64,10 @@ export default function Header() {
             <button
               type="button"
               onClick={toggleTheme}
-              aria-label={theme === 'dark' ? 'Activar modo claro' : 'Activar modo oscuro'}
+              aria-label="Cambiar tema"
               className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-surface text-muted transition-colors hover:bg-surface-soft"
             >
-              {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+              <MoonStar size={18} />
             </button>
 
             <Link
