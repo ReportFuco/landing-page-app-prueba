@@ -1,62 +1,58 @@
-﻿import { Check } from 'lucide-react';
 import Reveal from '@/components/Reveal';
 import Section from '@/components/Section';
 
-const FEATURES = [
+const BLOCKS = [
   {
-    title: 'Experiencia multidisciplinaria',
-    description: 'Equipo senior en facilitación, política pública, territorio y sostenibilidad.',
+    title: 'Experiencia territorial',
+    description:
+      'Trabajamos en contextos complejos donde conviven intereses públicos, privados y comunitarios.',
   },
   {
-    title: 'Red aliada en América Latina',
-    description: 'Profesionales y empresas que permiten implementación contextualizada por país.',
+    title: 'Diseño de procesos',
+    description:
+      'Construimos hojas de ruta claras para diálogo, coordinación institucional y relacionamiento sostenible.',
   },
   {
-    title: 'Orientación a resultados',
-    description: 'Pasamos de acuerdos a planes accionables con seguimiento e indicadores.',
+    title: 'Implementación con foco',
+    description:
+      'No nos quedamos en la conversación: ordenamos decisiones, prioridades y seguimiento.',
   },
 ];
 
 export default function AboutSection() {
   return (
-    <Section className="bg-white py-14 md:py-24">
-      <div className="grid items-center gap-12 lg:grid-cols-[1fr_1.05fr]">
+    <Section id="quienes-somos" className="bg-white py-14 sm:py-16 md:py-20">
+      <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
         <Reveal>
-          <div className="relative rounded-3xl border border-primary-100 bg-gradient-to-br from-primary-700 to-accent-700 p-10 text-white shadow-[0_28px_60px_-36px_rgba(2,132,199,0.7)]">
-            <p className="text-sm uppercase tracking-[0.12em] text-primary-100">Quiénes somos</p>
-            <h2 className="mt-4 text-3xl font-bold md:text-4xl">Diseñamos acuerdos que sí se implementan.</h2>
-            <p className="mt-5 text-blue-50">
-              Somos una consultora con trayectoria en diálogo y colaboración multiactor para empresas,
-              gobiernos y organismos internacionales.
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-neutral-500">
+              Quiénes somos
             </p>
-            <div className="mt-8 rounded-2xl border border-white/15 bg-white/10 p-5 text-sm text-blue-50">
-              Trabajamos por la efectividad del proceso y la calidad del resultado, manteniendo
-              neutralidad respecto de los intereses de las partes.
-            </div>
+            <h2 className="mt-4 text-3xl font-semibold leading-tight text-neutral-950 sm:text-4xl md:text-5xl">
+              Una consultora orientada a construir acuerdos duraderos.
+            </h2>
+            <p className="mt-5 text-base leading-7 text-neutral-700 sm:text-lg">
+              Acompañamos procesos de colaboración estratégica entre empresas, sector público,
+              organizaciones sociales y comunidades, ayudando a generar condiciones para decisiones
+              compartidas y resultados sostenibles.
+            </p>
+            <p className="mt-4 text-base leading-7 text-neutral-700 sm:text-lg">
+              Nuestro enfoque combina criterio técnico, lectura territorial y una facilitación capaz
+              de ordenar conversaciones difíciles sin perder de vista la implementación.
+            </p>
           </div>
         </Reveal>
 
-        <Reveal delay={0.1}>
-          <div>
-            <h3 className="text-3xl font-bold text-neutral-900 md:text-4xl">Capacidad técnica + trabajo territorial</h3>
-            <p className="mt-5 text-lg text-neutral-600">
-              Acompañamos procesos complejos de colaboración con metodologías claras, información útil y
-              una facilitación que fortalece confianza entre actores diversos.
-            </p>
-
-            <div className="mt-8 space-y-5">
-              {FEATURES.map((feature) => (
-                <div key={feature.title} className="flex gap-4 rounded-2xl border border-neutral-200 bg-neutral-50 p-4">
-                  <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-emerald-100 text-emerald-700">
-                    <Check size={16} />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-neutral-900">{feature.title}</h4>
-                    <p className="mt-1 text-sm text-neutral-600">{feature.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+        <Reveal delay={0.08}>
+          <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+            {BLOCKS.map((block) => (
+              <div key={block.title} className="rounded-[28px] border border-neutral-200 bg-white p-6 sm:p-7">
+                <p className="text-lg font-semibold text-neutral-950">{block.title}</p>
+                <p className="mt-3 text-sm leading-6 text-neutral-700 sm:text-base">
+                  {block.description}
+                </p>
+              </div>
+            ))}
           </div>
         </Reveal>
       </div>
