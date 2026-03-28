@@ -1,15 +1,73 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --surface-soft: #f1f5f9;
   --foreground: #0f172a;
+  --muted: #475569;
+  --border: #e2e8f0;
+  --accent: #0369a1;
+  --accent-foreground: #0c4a6e;
   --font-sans: var(--font-manrope);
   --font-display: var(--font-sora);
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #111827;
+    --surface: #1f2937;
+    --surface-soft: #243244;
+    --foreground: #f1f5f9;
+    --muted: #cbd5e1;
+    --border: #1e293b;
+    --accent: #38bdf8;
+    --accent-foreground: #7dd3fc;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='light'] {
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --surface-soft: #f1f5f9;
+  --foreground: #0f172a;
+  --muted: #475569;
+  --border: #e2e8f0;
+  --accent: #0369a1;
+  --accent-foreground: #0c4a6e;
+}
+
+:root[data-theme='dark'] {
+  --background: #111827;
+  --surface: #1f2937;
+  --surface-soft: #243244;
+  --foreground: #f1f5f9;
+  --muted: #cbd5e1;
+  --border: #1e293b;
+  --accent: #38bdf8;
+  --accent-foreground: #7dd3fc;
+  color-scheme: dark;
+}
+
+html.theme-light {
+  color-scheme: light;
+}
+
+html.theme-dark {
+  color-scheme: dark;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-soft: var(--surface-soft);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
   --font-sans: var(--font-manrope);
 }
 
@@ -17,7 +75,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background: #ffffff;
+  background: var(--background);
 }
 
 body {

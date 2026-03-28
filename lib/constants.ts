@@ -1,4 +1,4 @@
-import { Client, MethodologyPhase, Service } from '@/types';
+import { Client, ImpactProject, MethodologyPhase, ProposalScroll, Service } from '@/types';
 
 export const COLORS = {
   primary: '#0f766e',
@@ -73,8 +73,94 @@ export const CONTACT_INFO = {
 };
 
 export const NAV_MENU = [
-  { label: 'Inicio', href: '#inicio' },
-  { label: 'Quiénes somos', href: '#quienes-somos' },
-  { label: 'Clientes', href: '#clientes' },
-  { label: 'Contacto', href: '#contacto' },
+  { label: 'Inicio', href: '/#inicio' },
+  { label: 'Propuestas', href: '/#propuestas' },
+  { label: 'Quiénes somos', href: '/#quienes-somos' },
+  { label: 'Proyectos de Impacto', href: '/proyectos-impacto' },
+  { label: 'Contacto', href: '/#contacto' },
+];
+
+export const PROPOSAL_SCROLLS: ProposalScroll[] = [
+  {
+    id: 'propuesta-1',
+    tag: 'Propuesta 01',
+    title: 'Desarrollo territorial sostenible desde la confianza',
+    subtitle: 'Propósito de Originaria',
+    description:
+      'Nuestro propósito es facilitar el desarrollo territorial sostenible a partir de la generación de confianza entre empresas, actores públicos y comunidades locales. Creemos en relaciones horizontales, de conocimiento y respeto mutuo y abiertas a la creatividad e innovación.',
+    bullets: [
+      'Confianza entre empresas, sector público y comunidades',
+      'Relaciones horizontales y de respeto mutuo',
+      'Apertura a creatividad e innovación territorial',
+    ],
+  },
+  {
+    id: 'propuesta-2',
+    tag: 'Propuesta 02',
+    title: 'Valor compartido sostenible en cadenas de valor',
+    subtitle: 'Integración de emprendimientos locales',
+    description:
+      'El valor compartido sostenible es un desafío urgente. En Originaria apoyamos en la integración de emprendimientos locales a las cadenas de agregación de valor de las empresas que comparten el uso de estos territorios.',
+    bullets: [
+      'Integración de emprendimientos locales',
+      'Cadenas de agregación de valor sostenibles',
+      'Articulación con empresas en el territorio',
+    ],
+  },
+  {
+    id: 'propuesta-3',
+    tag: 'Propuesta 03',
+    title: 'Alianzas para impacto social, económico y ambiental',
+    subtitle: 'Articulación multiactor',
+    description:
+      'Originaria impulsa el desarrollo territorial sostenible articulando alianzas entre empresas, comunidades y gobiernos para generar impacto social, económico y ambiental.',
+    bullets: [
+      'Alianzas entre empresas, comunidades y gobiernos',
+      'Impacto social, económico y ambiental',
+      'Sostenibilidad territorial de largo plazo',
+    ],
+  },
+];
+
+export const IMPACT_PROJECTS: ImpactProject[] = [
+  {
+    id: 'impacto-1',
+    title: 'Proyecto de Impacto 01',
+    summary: 'Descripción breve editable para explicar el objetivo general del proyecto.',
+    category: 'Desarrollo Territorial',
+    status: 'En diseño',
+    year: '2026',
+  },
+  {
+    id: 'impacto-2',
+    title: 'Proyecto de Impacto 02',
+    summary: 'Espacio para contar el problema abordado, aliados y alcance del proyecto.',
+    category: 'Articulación Público-Privada',
+    status: 'En ejecución',
+    year: '2026',
+  },
+  {
+    id: 'impacto-3',
+    title: 'Proyecto de Impacto 03',
+    summary: 'Bloque editable para detallar acciones clave, metodología y foco de resultados.',
+    category: 'Participación Ciudadana',
+    status: 'En diseño',
+    year: '2026',
+  },
+  {
+    id: 'impacto-4',
+    title: 'Proyecto de Impacto 04',
+    summary: 'Placeholder para incorporar métricas de proceso, aprendizajes y próximos pasos.',
+    category: 'Sostenibilidad',
+    status: 'En implementación',
+    year: '2026',
+  },
+  {
+    id: 'impacto-5',
+    title: 'Proyecto de Impacto 05',
+    summary: 'Sección preparada para narrar el impacto esperado y el valor generado.',
+    category: 'Innovación Social',
+    status: 'Próximamente',
+    year: '2026',
+  },
 ];

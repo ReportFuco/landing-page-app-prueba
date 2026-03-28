@@ -38,3 +38,23 @@ export interface MethodologyPhase {
   description: string;
   items: string[];
 }
+
+// Tipos para propuestas del landing
+export interface ProposalScroll {
+  id: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  bullets: string[];
+  tag: string;
+}
+
+// Tipos para proyectos de impacto
+export interface ImpactProject {
+  id: string;
+  title: string;
+  summary: string;
+  category: string;
+  status: string;
+  year: string;
+}

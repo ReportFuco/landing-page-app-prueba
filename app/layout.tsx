@@ -54,9 +54,26 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const themeInitScript = `
+    (function() {
+      try {
+        var stored = localStorage.getItem('theme');
+        var preferredDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = stored === 'light' || stored === 'dark' ? stored : (preferredDark ? 'dark' : 'light');
+        var root = document.documentElement;
+        root.setAttribute('data-theme', theme);
+        root.classList.remove('theme-light', 'theme-dark');
+        root.classList.add(theme === 'dark' ? 'theme-dark' : 'theme-light');
+      } catch (e) {}
+    })();
+  `;
+
   return (
-    <html lang="es" className={`${manrope.variable} ${sora.variable} h-full antialiased scroll-smooth`}>
-      <body className="min-h-full flex flex-col bg-neutral-50 text-neutral-900">
+    <html lang="es" className={`${manrope.variable} ${sora.variable} h-full antialiased scroll-smooth`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
+      <body className="min-h-full flex flex-col bg-background text-foreground">
         <SchemaScript />
         <Header />
         <main className="flex-grow">{children}</main>
