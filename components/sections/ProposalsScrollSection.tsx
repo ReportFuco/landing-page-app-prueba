@@ -37,27 +37,24 @@ export default function ProposalsScrollSection() {
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, amount: 0.35 }}
               transition={{ duration: 0.6, ease: 'easeOut', delay: index * 0.05 }}
-              className="sticky top-24 min-h-[72svh] overflow-hidden rounded-[30px] border border-border bg-[linear-gradient(160deg,var(--surface)_0%,var(--surface-soft)_100%)] p-6 shadow-[0_20px_50px_-25px_rgba(15,23,42,0.35)] sm:p-8 md:p-10"
+              className="sticky top-24 min-h-[72svh] overflow-hidden rounded-2xl border border-border bg-surface p-6 shadow-sm sm:p-8 md:p-10"
             >
-              <div className="absolute -left-20 -top-20 h-52 w-52 rounded-full bg-accent/20 blur-3xl" />
-              <div className="absolute -bottom-20 -right-20 h-56 w-56 rounded-full bg-accent/15 blur-3xl" />
-
-              <div className="relative z-10 grid h-full gap-10 lg:grid-cols-[1fr_0.95fr] lg:gap-14">
+              <div className="grid h-full gap-10 lg:grid-cols-[1fr_0.95fr] lg:gap-14">
                 <div>
-                  <span className="inline-flex rounded-full border border-border bg-surface px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-accent-foreground">
+                  <span className="inline-flex rounded-md border border-border bg-surface-soft px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-muted">
                     {proposal.tag}
                   </span>
                   <h3 className="mt-6 text-3xl font-semibold leading-tight text-foreground sm:text-4xl">
                     {proposal.title}
                   </h3>
-                  <p className="mt-4 text-sm uppercase tracking-[0.16em] text-accent-foreground">{proposal.subtitle}</p>
+                  <p className="mt-4 text-sm uppercase tracking-[0.12em] text-muted">{proposal.subtitle}</p>
                   <p className="mt-6 max-w-2xl text-base leading-7 text-muted sm:text-lg">
                     {proposal.description}
                   </p>
                 </div>
 
                 <div className="flex items-end">
-                  <div className="w-full rounded-[24px] border border-border bg-surface p-6 backdrop-blur">
+                  <div className="w-full rounded-xl border border-border bg-surface-soft p-6">
                     <p className="text-sm font-semibold uppercase tracking-[0.14em] text-muted">
                       Estructura sugerida
                     </p>
@@ -65,7 +62,7 @@ export default function ProposalsScrollSection() {
                       {proposal.bullets.map((bullet) => (
                         <li
                           key={bullet}
-                          className="rounded-xl border border-border bg-surface-soft px-4 py-3 text-sm text-foreground"
+                          className="rounded-lg border border-border bg-surface px-4 py-3 text-sm text-foreground"
                         >
                           {bullet}
                         </li>

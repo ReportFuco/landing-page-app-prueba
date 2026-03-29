@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Section from '@/components/Section';
-import ImpactProjectsSection from '@/components/sections/ImpactProjectsSection';
+import ImpactTruchasSection from '@/components/sections/ImpactTruchasSection';
 
 export const metadata: Metadata = {
   title: 'Proyectos de Impacto | Colaboración Estratégica',
@@ -19,11 +19,11 @@ export default function ProyectosImpactoPage() {
               Proyectos de Impacto
             </p>
             <h1 className="mt-4 text-4xl font-semibold leading-tight text-foreground sm:text-5xl md:text-6xl">
-              Cinco proyectos para mostrar alcance, foco y resultados.
+              Proyectos de Impacto con foco social, económico y ambiental.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-7 text-muted sm:text-lg">
-              Esta página mantiene la línea del landing y te deja una estructura lista para cargar
-              proyectos generales en etapas, con descripción y estado.
+              Aquí presentamos los cinco proyectos priorizados por Originaria, su localización
+              territorial y su propuesta de valor para comunidades y empresas.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
@@ -42,21 +42,19 @@ export default function ProyectosImpactoPage() {
           </div>
 
           <div className="rounded-[30px] border border-border bg-[radial-gradient(circle_at_top_right,_rgba(2,132,199,0.12),_transparent_58%),var(--surface)] p-6 sm:p-8">
-            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-muted">
-              Bloque editable
-            </p>
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-muted">Enfoque</p>
             <h2 className="mt-4 text-2xl font-semibold leading-tight text-foreground sm:text-3xl">
-              Espacio para introducir tu narrativa de impacto.
+              Desarrollo de proyectos de agregación de valor en cinco regiones del país.
             </h2>
             <p className="mt-4 text-base leading-7 text-muted">
-              Puedes usar este bloque para explicar criterios de selección de proyectos, cobertura
-              territorial, hitos o aprendizajes clave.
+              Cada iniciativa busca fortalecer ecosistemas territoriales sostenibles mediante
+              encadenamiento productivo, innovación local y colaboración multiactor.
             </p>
           </div>
         </div>
       </Section>
 
-      <ImpactProjectsSection withIntro={false} />
+      <ImpactTruchasSection />
     </>
   );
 }

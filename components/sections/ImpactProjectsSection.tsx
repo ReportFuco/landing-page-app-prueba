@@ -38,6 +38,19 @@ export default function ImpactProjectsSection({ withIntro = true }: ImpactProjec
                 <h3 className="mt-5 text-2xl font-semibold leading-tight text-foreground">{project.title}</h3>
                 <p className="mt-4 flex-grow text-sm leading-6 text-muted sm:text-base">{project.summary}</p>
 
+                {project.projects?.length ? (
+                  <div className="mt-5">
+                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted">Proyectos</p>
+                    <ul className="mt-3 space-y-2">
+                      {project.projects.map((item) => (
+                        <li key={item} className="rounded-lg bg-surface-soft px-3 py-2 text-sm text-foreground">
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : null}
+
                 <div className="mt-6 border-t border-border pt-4">
                   <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted">Estado</p>
                   <p className="mt-1 text-sm font-medium text-foreground">{project.status}</p>

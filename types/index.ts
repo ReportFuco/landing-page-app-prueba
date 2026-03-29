@@ -57,11 +57,13 @@ export interface ImpactProject {
   category: string;
   status: string;
   year: string;
+  projects?: string[];
 }
 
 export interface ValueProposition {
   id: string;
   title: string;
   summary: string;
-  highlights: string[];
+  offers: string[];
+  statement: string;
 }

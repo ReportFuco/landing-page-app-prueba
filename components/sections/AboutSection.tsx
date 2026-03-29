@@ -29,16 +29,18 @@ export default function AboutSection() {
               Quiénes somos
             </p>
             <h2 className="mt-4 text-3xl font-semibold leading-tight text-foreground sm:text-4xl md:text-5xl">
-              Una consultora orientada a construir acuerdos duraderos.
+              Articulamos relaciones empresa-comunidad para ecosistemas territoriales sostenibles.
             </h2>
             <p className="mt-5 text-base leading-7 text-muted sm:text-lg">
-              Acompañamos procesos de colaboración estratégica entre empresas, sector público,
-              organizaciones sociales y comunidades, ayudando a generar condiciones para decisiones
-              compartidas y resultados sostenibles.
+              Somos un equipo de profesionales que centramos nuestro esfuerzo en articular y
+              facilitar la relación empresa/comunidad desde una mirada integradora y facilitadora de
+              procesos de desarrollo local que permita configurar ecosistemas territoriales
+              sostenibles.
             </p>
             <p className="mt-4 text-base leading-7 text-muted sm:text-lg">
-              Nuestro enfoque combina criterio técnico, lectura territorial y una facilitación capaz
-              de ordenar conversaciones difíciles sin perder de vista la implementación.
+              En Originaria tenemos amplia experiencia promoviendo e instalando estrategias de
+              desarrollo local, procesos de planificación participativa, gobernanza territorial y
+              fortalecimiento de derechos indígenas en Chile.
             </p>
           </div>
         </Reveal>

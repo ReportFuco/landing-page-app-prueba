@@ -7,6 +7,7 @@ import { NAV_MENU } from '@/lib/constants';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isAtTop, setIsAtTop] = useState(true);
 
   function applyTheme(theme: 'light' | 'dark') {
     const root = document.documentElement;
@@ -29,22 +30,50 @@ export default function Header() {
     applyTheme(initialTheme);
   }, []);
 
+  useEffect(() => {
+    function handleScroll() {
+      setIsAtTop(window.scrollY < 24);
+    }
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   function toggleTheme() {
     const currentTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
     applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
   }
 
+  const expanded = isAtTop && !isOpen;
+
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-surface">
+    <header
+      className={`sticky top-0 z-50 w-full border-b border-border backdrop-blur-xl transition-all duration-300 ${
+        expanded ? 'bg-surface/75' : 'bg-surface/92'
+      }`}
+    >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-[72px] items-center justify-between">
+        <div className={`flex items-center justify-between transition-all duration-300 ${expanded ? 'h-24' : 'h-20'}`}>
           <Link href="/" className="flex items-center gap-3.5" onClick={() => setIsOpen(false)}>
-            <div className="flex h-13 w-13 shrink-0 items-center justify-center rounded-full border border-border bg-surface text-base font-semibold text-foreground shadow-sm sm:h-14 sm:w-14 sm:text-lg">
+            <div
+              className={`flex shrink-0 items-center justify-center rounded-full border border-border bg-surface text-base font-semibold text-foreground shadow-sm transition-all duration-300 ${
+                expanded ? 'h-16 w-16 sm:h-[4.5rem] sm:w-[4.5rem] sm:text-xl' : 'h-13 w-13 sm:h-14 sm:w-14 sm:text-lg'
+              }`}
+            >
               CE
             </div>
             <div>
-              <p className="text-[11px] uppercase tracking-[0.22em] text-muted">Consultora</p>
-              <p className="text-base font-semibold leading-tight text-foreground sm:text-lg">Colaboración Estratégica</p>
+              <p className={`uppercase tracking-[0.22em] text-muted transition-all duration-300 ${expanded ? 'text-xs' : 'text-[11px]'}`}>
+                Consultora
+              </p>
+              <p
+                className={`font-semibold leading-tight text-foreground transition-all duration-300 ${
+                  expanded ? 'text-lg sm:text-xl' : 'text-base sm:text-lg'
+                }`}
+              >
+                Colaboración Estratégica
+              </p>
             </div>
           </Link>
 
